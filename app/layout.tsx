@@ -1,35 +1,30 @@
 import type { Metadata } from "next";
-import { Syne, IBM_Plex_Mono, DM_Sans } from "next/font/google";
+import { Instrument_Serif, Inter } from "next/font/google";
 import "./globals.css";
 
-const syne = Syne({
+const instrumentSerif = Instrument_Serif({
   subsets: ["latin"],
-  variable: "--font-syne",
-  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-instrument-serif",
+  weight: ["400"],
+  style: ["normal", "italic"],
 });
 
-const ibmPlexMono = IBM_Plex_Mono({
+const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-mono",
-  weight: ["400", "500", "600"],
-});
-
-const dmSans = DM_Sans({
-  subsets: ["latin"],
-  variable: "--font-sans",
-  weight: ["300", "400", "500"],
+  variable: "--font-inter",
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
-  title: "FORGE — AI That Closes",
+  title: "Perfect Pitch — the sales coach with perfect pitch",
   description:
-    "FORGE uses AI to supercharge your sales team's performance. Close more deals, forecast smarter, and win faster.",
-  keywords: "sales AI, AI sales coaching, sales performance, pipeline intelligence",
+    "Perfect Pitch is the AI in every closer's ear — an always-on conductor that listens to the call, hears what your buyer means, and feeds your rep the right note at the right tempo.",
+  keywords: "sales AI, AI sales coaching, sales performance, pipeline intelligence, conversation intelligence",
   openGraph: {
-    title: "FORGE — AI That Closes",
-    description: "AI-powered sales performance platform for elite teams.",
+    title: "Perfect Pitch — the sales coach with perfect pitch",
+    description: "AI-powered sales coaching that listens, conducts, and harmonizes every call.",
     url: "https://salesaidemo.com",
-    siteName: "FORGE",
+    siteName: "Perfect Pitch",
     type: "website",
   },
 };
@@ -41,11 +36,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body
-        className={`${syne.variable} ${ibmPlexMono.variable} ${dmSans.variable} bg-bg text-[#F5F4F0] font-sans antialiased`}
-      >
-        {children}
-      </body>
+      <body className={`${instrumentSerif.variable} ${inter.variable}`}>{children}</body>
     </html>
   );
 }
